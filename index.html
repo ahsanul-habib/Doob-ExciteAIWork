@@ -44,15 +44,43 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-col items-center">
-        <div class="w-10/12 border-2 border-solid border-black">
-            <div class="w-1/2">
-                Hello
+    <div class="flex flex-col items-center relative">
+        <div class="backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-lg w-8/12 border-2 border-solid border-black bg-slate-300 flex flex-row justify-center relative -top-40">
+            <div class="w-1/2 px-4">
+                <img class="rounded-lg w-full my-16" id="about-img">
             </div>
-            <div class="w-1/2">
-                Hii
+            <div class="w-1/2 px-8 py-16">
+                <div class="flex flex-col gap-5">
+                    <span class="text-4xl">I am a Web Developer</span>
+                    <span class="text-xl w-6/12 text-gray-500">Web designer and developer working for envato.com in Paris, France.</span>
+                    <div class="flex flex-col w-full gap-2">
+                        <div class="flex flex-row items-center gap-2">
+                            <span class="material-symbols-outlined text-blue-500">
+                                description
+                            </span>
+                            <span>Web designer & developer</span>
+                        </div>
+                        <div class="flex flex-row items-center gap-2">
+                            <span class="material-symbols-outlined text-blue-500">
+                                call
+                            </span>
+                            <span>+01916395965</span>
+                        </div>
+                        <div class="flex flex-row items-center gap-2">
+                            <span class="material-symbols-outlined text-blue-500">
+                                location_on
+                            </span>
+                            <span>Dhaka, Bangladesh</span>
+                        </div>
+                    </div>
+                    <a href="#" class="mt-10">
+                            <span class="text-gray hover:text-blue-500 hover:border-blue-500 hover:border-b-2">Download My CV</span>
+                    </a>
+                </div>
+
             </div>
         </div>
+        <h1 class="bg-teal-200">Hello</h1>
     </div>
     
 </body>
@@ -64,6 +92,7 @@
         .then(data=>{
             document.getElementById("hero").style.backgroundImage = "url('" + data["hero-img"] + "')";
             document.getElementById("logo-img").src =data["logo-img"];
+            document.getElementById("about-img").src =data["about-img"];
             const buttons = document.querySelectorAll('.btn-accent');
             buttons.forEach((button)=>{
                 button.classList.add(data["button-accent-color"]);
